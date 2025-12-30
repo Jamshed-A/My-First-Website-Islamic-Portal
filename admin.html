@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Islamic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .admin-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .admin-tab.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .admin-tab:hover:not(.active) {
+            background: #e9ecef;
+        }
+
+        .admin-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .content-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .content-actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .file-upload {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: #f8f9fa;
+        }
+
+        .file-upload.dragover {
+            border-color: #3498db;
+            background: #e3f2fd;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-label:hover {
+            background: #2980b9;
+        }
+
+        .file-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .status-message {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 1rem;
+            }
+
+            .admin-tabs {
+                flex-direction: column;
+            }
+
+            .admin-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1 class="site-title">Admin Panel - Islamic Portal</h1>
+        <div class="date-display">
+            <div id="islamicDate">Loading...</div>
+            <div id="gregorianDate">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" class="nav-link" data-page="articles"><i class="fas fa-book"></i> Articles</a></li>
+            <li><a href="#" class="nav-link" data-page="books"><i class="fas fa-book-open"></i> Books</a></li>
+            <li><a href="#" class="nav-link" data-page="videos"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="#" class="nav-link" data-page="audios"><i class="fas fa-music"></i> Audios</a></li>
+            <li><a href="admin.html" class="nav-link active"><i class="fas fa-cog"></i> Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Admin Content -->
+    <main class="main-content">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2><i class="fas fa-cogs"></i> Content Management Dashboard</h2>
+                <div>Welcome, Administrator</div>
+            </div>
+
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="hadith">Daily Hadith</div>
+                <div class="admin-tab" data-tab="articles">Articles</div>
+                <div class="admin-tab" data-tab="books">Books</div>
+                <div class="admin-tab" data-tab="videos">Videos</div>
+                <div class="admin-tab" data-tab="audios">Audios</div>
+            </div>
+
+            <div class="admin-content">
+                <!-- Status message -->
+                <div class="status-message" id="statusMessage"></div>
+
+                <!-- Daily Hadith Tab -->
+                <div class="tab-content active" id="hadith-tab">
+                    <h3><i class="fas fa-quote-left"></i> Update Today's Hadith</h3>
+                    <form id="hadithForm">
+                        <div class="form-group">
+                            <label for="hadithText">Hadith Text:</label>
+                            <textarea id="hadithText" placeholder="Enter the hadith text..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hadithReference">Reference:</label>
+                            <input type="text" id="hadithReference" placeholder="e.g., Sahih al-Bukhari 1234">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Hadith</button>
+                    </form>
+                </div>
+
+                <!-- Articles Tab -->
+                <div class="tab-content" id="articles-tab">
+                    <h3><i class="fas fa-book"></i> Manage Articles</h3>
+
+                    <form id="articleForm">
+                        <div class="form-group">
+                            <label for="articleTitle">Title:</label>
+                            <input type="text" id="articleTitle" placeholder="Enter article title">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleContent">Content:</label>
+                            <textarea id="articleContent" placeholder="Enter article content..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleAuthor">Author:</label>
+                            <input type="text" id="articleAuthor" placeholder="Enter author name">
+                        </div>
+                        <div class="form-group">
+                            <label for="articleCategory">Category:</label>
+                            <select id="articleCategory">
+                                <option value="">Select Category</option>
+                                <option value="worship">Worship</option>
+                                <option value="history">History</option>
+                                <option value="ethics">Ethics</option>
+                                <option value="education">Education</option>
+                                <option value="family">Family</option>
+                            </select>
+                        </div>
+                        <div class="file-upload" id="articleFileUpload">
+                            <p><i class="fas fa-cloud-upload-alt"></i> Drag & drop article images here or click to browse</p>
+                            <input type="file" id="articleFile" class="file-input" accept="image/*">
+                            <label for="articleFile" class="file-label">Choose File</label>
+                            <div class="file-info" id="articleFileInfo"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Article</button>
+                    </form>
+
+                    <div class="content-grid" id="articlesGrid">
+                        <!-- Articles will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Books Tab -->
+                <div class="tab-content" id="books-tab">
+                    <h3><i class="fas fa-book-open"></i> Manage Books</h3>
+
+                    <form id="bookForm">
+                        <div class="form-group">
+                            <label for="bookTitle">Title:</label>
+                            <input type="text" id="bookTitle" placeholder="Enter book title">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookAuthor">Author:</label>
+                            <input type="text" id="bookAuthor" placeholder="Enter author name">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookDescription">Description:</label>
+                            <textarea id="bookDescription" placeholder="Enter book description..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookCategory">Category:</label>
+                            <select id="bookCategory">
+                                <option value="">Select Category</option>
+                                <option value="quran">Quran</option>
+                                <option value="hadith">Hadith</option>
+                                <option value="biography">Biography</option>
+                                <option value="history">History</option>
+                                <option value="jurisprudence">Jurisprudence</option>
+                            </select>
+                        </div>
+                        <div class="file-upload" id="bookFileUpload">
+                            <p><i class="fas fa-cloud-upload-alt"></i> Upload Book PDF</p>
+                            <input type="file" id="bookFile" class="file-input" accept=".pdf">
+                            <label for="bookFile" class="file-label">Choose PDF File</label>
+                            <div class="file-info" id="bookFileInfo"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Book</button>
+                    </form>
+
+                    <div class="content-grid" id="booksGrid">
+                        <!-- Books will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Videos Tab -->
+                <div class="tab-content" id="videos-tab">
+                    <h3><i class="fas fa-video"></i> Manage Videos</h3>
+
+                    <form id="videoForm">
+                        <div class="form-group">
+                            <label for="videoTitle">Title:</label>
+                            <input type="text" id="videoTitle" placeholder="Enter video title">
+                        </div>
+                        <div class="form-group">
+                            <label for="videoDescription">Description:</label>
+                            <textarea id="videoDescription" placeholder="Enter video description..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="videoCategory">Category:</label>
+                            <select id="videoCategory">
+                                <option value="">Select Category</option>
+                                <option value="lectures">Lectures</option>
+                                <option value="tutorials">Tutorials</option>
+                                <option value="documentaries">Documentaries</option>
+                                <option value="recitations">Recitations</option>
+                            </select>
+                        </div>
+                        <div class="file-upload" id="videoFileUpload">
+                            <p><i class="fas fa-cloud-upload-alt"></i> Upload Video File</p>
+                            <input type="file" id="videoFile" class="file-input" accept="video/*">
+                            <label for="videoFile" class="file-label">Choose Video File</label>
+                            <div class="file-info" id="videoFileInfo"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Video</button>
+                    </form>
+
+                    <div class="content-grid" id="videosGrid">
+                        <!-- Videos will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Audios Tab -->
+                <div class="tab-content" id="audios-tab">
+                    <h3><i class="fas fa-music"></i> Manage Audios</h3>
+
+                    <form id="audioForm">
+                        <div class="form-group">
+                            <label for="audioTitle">Title:</label>
+                            <input type="text" id="audioTitle" placeholder="Enter audio title">
+                        </div>
+                        <div class="form-group">
+                            <label for="audioDescription">Description:</label>
+                            <textarea id="audioDescription" placeholder="Enter audio description..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="audioCategory">Category:</label>
+                            <select id="audioCategory">
+                                <option value="">Select Category</option>
+                                <option value="recitations">Quran Recitations</option>
+                                <option value="lectures">Lectures</option>
+                                <option value="nasheeds">Nasheeds</option>
+                                <option value="dars">Dars</option>
+                            </select>
+                        </div>
+                        <div class="file-upload" id="audioFileUpload">
+                            <p><i class="fas fa-cloud-upload-alt"></i> Upload Audio File</p>
+                            <input type="file" id="audioFile" class="file-input" accept="audio/*">
+                            <label for="audioFile" class="file-label">Choose Audio File</label>
+                            <div class="file-info" id="audioFileInfo"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Audio</button>
+                    </form>
+
+                    <div class="content-grid" id="audiosGrid">
+                        <!-- Audios will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

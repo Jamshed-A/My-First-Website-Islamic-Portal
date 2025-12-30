@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Islamic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1 class="site-title">Islamic Books</h1>
+        <div class="date-display">
+            <div id="islamicDate">Loading...</div>
+            <div id="gregorianDate">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="articles.html" class="nav-link"><i class="fas fa-book"></i> Articles</a></li>
+            <li><a href="books.html" class="nav-link active"><i class="fas fa-book-open"></i> Books</a></li>
+            <li><a href="videos.html" class="nav-link"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="audios.html" class="nav-link"><i class="fas fa-music"></i> Audios</a></li>
+            <li><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="books-container">
+            <h2><i class="fas fa-book-open"></i> Islamic Books</h2>
+
+            <!-- Book Categories Filter -->
+            <div class="filter-section">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="quran">Quran</option>
+                    <option value="hadith">Hadith</option>
+                    <option value="biography">Biography</option>
+                    <option value="history">History</option>
+                    <option value="jurisprudence">Jurisprudence</option>
+                </select>
+
+                <input type="text" id="searchInput" placeholder="Search books...">
+            </div>
+
+            <!-- Books Grid -->
+            <div class="books-grid" id="booksGrid">
+                <!-- Books will be loaded here dynamically -->
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">Quran</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">The Sealed Nectar</h3>
+                        <p class="book-author">By: Safi ur-Rahman al-Mubarakpuri</p>
+                        <p class="book-description">A comprehensive biography of Prophet Muhammad (PBUH) covering his life and teachings.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 500</span>
+                            <span class="book-language">Language: English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">Hadith</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Sahih al-Bukhari</h3>
+                        <p class="book-author">By: Imam Bukhari</p>
+                        <p class="book-description">One of the most authentic collections of hadith in Islam, containing 7,275 hadith.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 1200</span>
+                            <span class="book-language">Language: Arabic/English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">Biography</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Fortification of the Soul</h3>
+                        <p class="book-author">By: Imam Ibn al-Qayyim</p>
+                        <p class="book-description">A spiritual guide to purifying the heart and strengthening one's relationship with Allah.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 320</span>
+                            <span class="book-language">Language: English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">History</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">History of Islamic Civilization</h3>
+                        <p class="book-author">By: Phillip Hitti</p>
+                        <p class="book-description">A comprehensive overview of Islamic civilization from its beginnings to modern times.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 650</span>
+                            <span class="book-language">Language: English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">Jurisprudence</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Fiqh of Islamic Finance</h3>
+                        <p class="book-author">By: Dr. Monzer Kahf</p>
+                        <p class="book-description">An in-depth look at Islamic financial principles and their modern applications.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 420</span>
+                            <span class="book-language">Language: English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-cover">
+                        <i class="fas fa-book fa-3x"></i>
+                        <span class="book-category">Quran</span>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Tafsir Ibn Kathir</h3>
+                        <p class="book-author">By: Ibn Kathir</p>
+                        <p class="book-description">A comprehensive commentary on the Quran with historical context and explanations.</p>
+                        <div class="book-meta">
+                            <span class="book-pages">Pages: 2000</span>
+                            <span class="book-language">Language: Arabic/English</span>
+                        </div>
+                        <a href="#" class="read-book">Read Online <i class="fas fa-book-open"></i></a>
+                        <a href="#" class="download-book">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">4</span></span>
+                <button class="page-btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="books.js"></script>
+</body>
+</html>

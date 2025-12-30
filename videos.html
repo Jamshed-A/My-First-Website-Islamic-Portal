@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Islamic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1 class="site-title">Islamic Videos</h1>
+        <div class="date-display">
+            <div id="islamicDate">Loading...</div>
+            <div id="gregorianDate">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="articles.html" class="nav-link"><i class="fas fa-book"></i> Articles</a></li>
+            <li><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Books</a></li>
+            <li><a href="videos.html" class="nav-link active"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="audios.html" class="nav-link"><i class="fas fa-music"></i> Audios</a></li>
+            <li><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="videos-container">
+            <h2><i class="fas fa-video"></i> Islamic Videos</h2>
+
+            <!-- Video Categories Filter -->
+            <div class="filter-section">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="lectures">Lectures</option>
+                    <option value="tutorials">Tutorials</option>
+                    <option value="documentaries">Documentaries</option>
+                    <option value="recitations">Recitations</option>
+                </select>
+
+                <input type="text" id="searchInput" placeholder="Search videos...">
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="videos-grid" id="videosGrid">
+                <!-- Videos will be loaded here dynamically -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/2c3e50/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">12:45</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Introduction to Quran</h3>
+                        <p class="video-description">A comprehensive introduction to the Quran, its structure, themes, and significance in Islam.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Dr. Ahmed Hassan</span>
+                            <span class="video-date">Published: 2024-01-15</span>
+                            <span class="video-views">1.2K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/34495e/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">25:30</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Prayer Tutorial - Step by Step</h3>
+                        <p class="video-description">Learn how to perform Islamic prayers with detailed instructions and demonstrations.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Sheikh Muhammad</span>
+                            <span class="video-date">Published: 2024-01-12</span>
+                            <span class="video-views">2.5K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/27ae60/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">18:20</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Hajj Pilgrimage Guide</h3>
+                        <p class="video-description">Complete guide to performing Hajj, including rituals, requirements, and spiritual significance.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Dr. Fatima Ali</span>
+                            <span class="video-date">Published: 2024-01-10</span>
+                            <span class="video-views">3.1K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/3498db/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">45:15</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Life of Prophet Muhammad</h3>
+                        <p class="video-description">Documentary on the life of Prophet Muhammad (PBUH), his mission, and legacy.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Islamic Documentary Team</span>
+                            <span class="video-date">Published: 2024-01-08</span>
+                            <span class="video-views">5.7K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/9b59b6/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">32:10</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Understanding Zakat</h3>
+                        <p class="video-description">Explanation of Zakat obligations, calculations, and its role in Islamic society.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Dr. Omar Khan</span>
+                            <span class="video-date">Published: 2024-01-05</span>
+                            <span class="video-views">1.8K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/320x180/e74c3c/ffffff?text=Video+Thumbnail" alt="Video Thumbnail">
+                        <div class="video-duration">28:45</div>
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Quran Recitation - Surah Al-Fatiha</h3>
+                        <p class="video-description">Beautiful recitation of the opening chapter of the Quran with translation and explanation.</p>
+                        <div class="video-meta">
+                            <span class="video-author">By: Sheikh Mahmoud</span>
+                            <span class="video-date">Published: 2024-01-03</span>
+                            <span class="video-views">4.3K views</span>
+                        </div>
+                        <a href="#" class="watch-video">Watch Video <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">5</span></span>
+                <button class="page-btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="videos.js"></script>
+</body>
+</html>

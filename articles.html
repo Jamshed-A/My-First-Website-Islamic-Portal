@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Islamic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1 class="site-title">Islamic Articles</h1>
+        <div class="date-display">
+            <div id="islamicDate">Loading...</div>
+            <div id="gregorianDate">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="articles.html" class="nav-link active"><i class="fas fa-book"></i> Articles</a></li>
+            <li><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Books</a></li>
+            <li><a href="videos.html" class="nav-link"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="audios.html" class="nav-link"><i class="fas fa-music"></i> Audios</a></li>
+            <li><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="articles-container">
+            <h2><i class="fas fa-book"></i> Islamic Articles</h2>
+
+            <!-- Article Categories Filter -->
+            <div class="filter-section">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="worship">Worship</option>
+                    <option value="history">History</option>
+                    <option value="ethics">Ethics</option>
+                    <option value="education">Education</option>
+                    <option value="family">Family</option>
+                </select>
+
+                <input type="text" id="searchInput" placeholder="Search articles...">
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Articles will be loaded here dynamically -->
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/2c3e50/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Understanding Prayer in Islam</h3>
+                        <p class="article-excerpt">A comprehensive guide to the significance of prayer in Islamic faith and its spiritual benefits...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Sheikh Ahmed</span>
+                            <span class="article-date">Published: 2024-01-15</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/34495e/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">The Importance of Charity (Zakat)</h3>
+                        <p class="article-excerpt">Exploring the concept of Zakat in Islam and its role in building a just society...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Dr. Fatima Khan</span>
+                            <span class="article-date">Published: 2024-01-12</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/27ae60/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Ramadan Reflections</h3>
+                        <p class="article-excerpt">Spiritual insights and practical tips for making the most of the blessed month of Ramadan...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Imam Muhammad</span>
+                            <span class="article-date">Published: 2024-01-10</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">The Life of Prophet Muhammad</h3>
+                        <p class="article-excerpt">An in-depth look at the life and teachings of the final prophet of Islam...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Dr. Omar Hassan</span>
+                            <span class="article-date">Published: 2024-01-08</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/9b59b6/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Islamic Ethics and Morality</h3>
+                        <p class="article-excerpt">Understanding the moral framework that guides Muslim behavior in daily life...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Dr. Aisha Ali</span>
+                            <span class="article-date">Published: 2024-01-05</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-item">
+                    <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Article+Image" alt="Article Image" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Family Values in Islam</h3>
+                        <p class="article-excerpt">The importance of family structure and relationships in Islamic teachings...</p>
+                        <div class="article-meta">
+                            <span class="article-author">By: Sheikh Yusuf</span>
+                            <span class="article-date">Published: 2024-01-03</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">3</span></span>
+                <button class="page-btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="articles.js"></script>
+</body>
+</html>

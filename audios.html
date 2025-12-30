@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audios - Islamic Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1 class="site-title">Islamic Audios</h1>
+        <div class="date-display">
+            <div id="islamicDate">Loading...</div>
+            <div id="gregorianDate">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="articles.html" class="nav-link"><i class="fas fa-book"></i> Articles</a></li>
+            <li><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Books</a></li>
+            <li><a href="videos.html" class="nav-link"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="audios.html" class="nav-link active"><i class="fas fa-music"></i> Audios</a></li>
+            <li><a href="admin.html" class="nav-link"><i class="fas fa-cog"></i> Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="audios-container">
+            <h2><i class="fas fa-music"></i> Islamic Audios</h2>
+
+            <!-- Audio Categories Filter -->
+            <div class="filter-section">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="recitations">Quran Recitations</option>
+                    <option value="lectures">Lectures</option>
+                    <option value="nasheeds">Nasheeds</option>
+                    <option value="dars">Dars</option>
+                </select>
+
+                <input type="text" id="searchInput" placeholder="Search audios...">
+            </div>
+
+            <!-- Audios Grid -->
+            <div class="audios-grid" id="audiosGrid">
+                <!-- Audios will be loaded here dynamically -->
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Quran Recitations</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Surah Al-Fatiha - Recitation</h3>
+                        <p class="audio-artist">By: Sheikh Mahmoud Khalil Al-Husary</p>
+                        <p class="audio-description">Beautiful recitation of the opening chapter of the Quran with clear pronunciation.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 2:45</span>
+                            <span class="audio-date">Published: 2024-01-15</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Lectures</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Understanding Prayer - Lecture</h3>
+                        <p class="audio-artist">By: Dr. Ahmed Hassan</p>
+                        <p class="audio-description">In-depth lecture on the significance and proper performance of Islamic prayers.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 45:20</span>
+                            <span class="audio-date">Published: 2024-01-12</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Nasheeds</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Nasheed - Peace Be Upon You</h3>
+                        <p class="audio-artist">By: Islamic Nasheed Group</p>
+                        <p class="audio-description">Beautiful nasheed praising Prophet Muhammad (PBUH) and his noble character.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 3:15</span>
+                            <span class="audio-date">Published: 2024-01-10</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Dars</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Tafseer of Surah Yaseen</h3>
+                        <p class="audio-artist">By: Sheikh Omar Suleiman</p>
+                        <p class="audio-description">Detailed explanation of Surah Yaseen with insights and spiritual lessons.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 1:12:30</span>
+                            <span class="audio-date">Published: 2024-01-08</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Lectures</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Ramadan Spiritual Guidance</h3>
+                        <p class="audio-artist">By: Dr. Yasir Qadhi</p>
+                        <p class="audio-description">Spiritual advice and guidance for making the most of the blessed month of Ramadan.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 38:45</span>
+                            <span class="audio-date">Published: 2024-01-05</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-item">
+                    <div class="audio-cover">
+                        <i class="fas fa-music fa-3x"></i>
+                        <span class="audio-category">Quran Recitations</span>
+                    </div>
+                    <div class="audio-content">
+                        <h3 class="audio-title">Complete Juz Amma - Recitation</h3>
+                        <p class="audio-artist">By: Sheikh Abdul Rahman Al-Sudais</p>
+                        <p class="audio-description">Recitation of the last part of the Quran with beautiful melodic tones.</p>
+                        <div class="audio-meta">
+                            <span class="audio-duration">Duration: 42:15</span>
+                            <span class="audio-date">Published: 2024-01-03</span>
+                        </div>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="#" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-actions">
+                            <a href="#" class="download-audio">Download <i class="fas fa-download"></i></a>
+                            <a href="#" class="share-audio">Share <i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">4</span></span>
+                <button class="page-btn" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="audios.js"></script>
+</body>
+</html>
